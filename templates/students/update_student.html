@@ -1,0 +1,25 @@
+{% extends 'layout.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<section id="update-student">
+  <div id="update-student-inner">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-8 py-5">
+          <div id="student-update-form">
+            <form class="sudent-update-form" action="." method="post" enctype="multipart/form-data">
+              {% csrf_token %}
+              {{ form|crispy }}
+              <a href="{% url 'index_view' %}" class="btn btn-dark">
+                <i class="fas fa-arrow-left"></i> Back
+              </a>
+              <input class="btn btn-info" type="submit" value="Update Details">
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}
